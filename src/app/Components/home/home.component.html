@@ -1,0 +1,28 @@
+<div style="background-color: cadetblue;">
+    <div class="row dash-row fadeIn" *ngIf="avengers.length > 0;else elseBlock;">
+        <h3 style="text-align: center;">Select Avenger to view details!! \Click on add avenger button to add a new avenger</h3>
+        <div class="col-md-3 dashboard" *ngFor="let avenger of avengers" (click)="details(avenger.name)">
+            {{avenger.name}}
+        </div>
+    </div>
+    
+    <div *ngIf="avengers.length > 0" style="text-align: center;margin-top: 25px;">
+            <a routerLink="/form" routerLinkActive="active"><button class="btn btn-warning" style="margin-left: 40px;width: 10%;">Add new Avenger</button></a>
+    </div>
+
+<ng-template #elseBlock >
+    <img src="/assets/loading.gif" alt="spinner" style="margin: 15% 0 0 45%;width: 100px;">
+</ng-template>
+
+<div class="selectedAvengerDetials w3-animate-zoom" *ngIf="show">
+    <form #myForm="ngForm" (ngSubmit)="onSubmit(name)">
+        <b class="label-color">Name:</b><input type="text" #name class="name-box" value={{selectedAvenger.name}} readonly><br>
+        <b class="label-color">Orbital period:</b>{{selectedAvenger.orbital_period}}<br>
+        <b class="label-color">Rotation period:</b>{{selectedAvenger.rotation_period}}<br>
+        <b class="label-color">Gravity:</b>{{selectedAvenger.gravity}}<br>
+        <b class="label-color">Diameter:</b>{{selectedAvenger.diameter}}<br>
+        <button type="button" class="btn btn-default" (click)="editText()">Edit Name</button>
+        <button class="btn btn-success" [disabled]="!readOnly" style="margin-left:15px;">Submit</button>
+    </form>
+</div>
+</div>

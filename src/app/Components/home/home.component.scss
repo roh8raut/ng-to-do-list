@@ -1,0 +1,62 @@
+.dashboard{
+  background-color: bisque;
+  margin: 10px 0 0 20px;
+  width: 23%;
+  font-family: 'KoHo', sans-serif;
+  height: 35px;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+}
+
+.dash-row {
+  margin-left: 30%;
+  width: 50%;
+}
+
+.dashboard:hover {
+  opacity: 0.7;
+  background-color: brown;
+}
+
+.selectedAvengerDetials {
+  background-color: aqua;
+  width: 30%;
+  margin: 30px 0 0 35%;
+  padding: 50px;
+  color: blueviolet;
+  font-family: -webkit-body;
+}
+
+.label-color {
+  color: tomato;
+  padding-right: 5px;
+  font-family: -webkit-body;
+}
+
+.name-box {
+  padding-left: 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+input:focus {
+  outline:none !important;
+}
+
+.span-box {
+  display: block;
+}
+
+// ===================animation===========================
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+}
+

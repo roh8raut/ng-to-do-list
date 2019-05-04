@@ -1,0 +1,38 @@
+<div class="form-container" >
+    <form #userForm= "ngForm" (ngSubmit)="formSubmit(userForm.value)" [hidden]="submitted">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" [(ngModel)]="name" class="form-control" name="name" #n="ngModel" required>
+            <div [hidden]="n.valid || n.pristine" class="alert alert-danger">
+              please enter name
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Orbital-period</label>
+            <input type="number" class="form-control" name="orbital_period" ngModel required>
+        </div>
+
+        <div class="form-group">
+                <label>Gravity</label>
+                <input type="number" class="form-control" name="gravity" ngModel required>
+        </div>
+
+        <div class="form-group">
+            <label>Rotation-period</label>
+            <input type="number" class="form-control" name="rotation_period" ngModel required>
+        </div>
+
+        <div class="form-group">
+            <label>Diameter</label>
+            <input type="number" class="form-control" name="diameter" ngModel required>
+        </div>
+        
+
+        <button class="btn btn-info" [disabled]="!userForm.valid">Submit</button>
+    </form>
+</div>
+
+<div *ngIf="submitted" style="text-align: center">
+    <a routerLink="/home" routerLinkActive="active"><button class="btn btn-info" >Go to Dashboard</button></a>
+</div>

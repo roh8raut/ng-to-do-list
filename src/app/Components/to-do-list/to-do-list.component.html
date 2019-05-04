@@ -1,0 +1,30 @@
+<div class="container" class='to-do-list-container w3-animate-bottom'>
+    <div class="header">
+        <h1>TO-do-List</h1>
+    </div>
+
+    <h1 *ngIf="TODOS.length == 0">No task added!! click to add task</h1>
+    <div class="wrapper">
+      <input type="text" class='text-field' [(ngModel)]="todos" (keyup.enter)="addTask(todos)">
+      <i class="fa fa-plus-circle add" (click)="addTask(todos)"></i>
+      <button class="btn btn-danger clear" (click)="clearAll()">Clear All</button>
+    </div>
+
+    <div *ngFor="let todo of TODOS; let i = index" class="main-chart">
+      <div class="checkbox checkbox-primary task spin">
+        <input type="checkbox" class="checkbox2"  class="styled" (click)="taskDone(i)">
+        <label for="checkbox2"></label>
+        <span [ngClass]="{'task-complete': todo.done }">{{todo.task}}</span>
+      </div>
+    </div>
+
+    <hr style= "border: 1px solid red;">
+
+  <div *ngFor="let todo of DONE_TODOS; let i = index" class="completed-task">
+      <div class="checkbox checkbox-primary done w3-animate-top">
+          <input type="checkbox"  class="checkbox1 styled" (click)="taskUndone(i)" checked>
+          <label for="checkbox1"></label>
+          <span [ngClass]="{'task-complete': todo.done }">{{todo.task}}</span>
+      </div>
+    </div>   
+</div>

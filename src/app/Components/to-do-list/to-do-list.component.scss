@@ -1,0 +1,55 @@
+.to-do-list-container{
+    width: 40%;
+    margin-left: 450px;
+    top: 70px;
+    border: 2px solid black;
+}
+
+.wrapper {
+    background: yellow;
+    position: relative;
+}
+.add {
+    font-size: 30px;
+    top: 2px;
+    margin-left: 6px;
+    position: absolute;
+    // top: 196px;
+}
+
+.text-field{
+    width: 390px;
+    margin-left: 30px;
+}
+
+.clear {
+    margin-left: 40px;
+    
+}
+
+hr {
+    border: 0.1px solid red;
+    width: 50%;
+    margin-left: 120px;
+}
+.task-complete {
+    text-decoration: line-through; 
+    text-decoration-color: red;
+}
+.spin {
+animation-name: spin;
+animation-duration: 200ms;
+animation-iteration-count: 1;
+animation-timing-function: linear; 
+}
+
+
+@keyframes spin {
+  0% {top: 300px};
+  33% {top: 200px};
+  66% {top: 100px};
+  100% {top: 0px};
+
+}
+
+
